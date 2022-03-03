@@ -1,0 +1,506 @@
+@import "https://fonts.googleapis.com/css?family=Montserrat:300, 400, 700&display=swap";
+
+.section-title {
+  font-size: 4rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.section-title span {
+  color: var(--primary-color);
+}
+
+/* Header section */
+#header {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto;
+}
+
+.header {
+  min-height: 8vh;
+  transition: 0.3s ease background-color;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+
+.brand h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: white;
+}
+
+.brand h1 span {
+  color: var(--primary-color);
+}
+
+.nav-list {
+  position: relative;
+}
+
+.nav-list .menu-btn {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  height: 5rem;
+  width: 5rem;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.menu-btn i {
+  color: white;
+  font-size: 2.8rem;
+  display: none;
+}
+
+.menu-btn i.active {
+  display: block;
+}
+
+.nav-list ul {
+  list-style: none;
+  position: fixed;
+  background-color: rgb(31, 30, 30);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+  display: none;
+}
+
+.nav-list ul.active {
+  display: flex;
+}
+
+.nav-list ul.inactive {
+  display: none;
+}
+
+.nav-list ul a {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+  transition: all 0.2s;
+}
+
+.nav-list ul a::after {
+  content: attr(data-after);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: rgba(240, 248, 255, 0.021);
+  font-size: 13rem;
+  letter-spacing: 50px;
+  z-index: -1;
+  transition: 0.3s ease letter-spacing;
+}
+
+.nav-list ul li:hover a::after {
+  transform: translate(-50%, -50%) scale(1);
+  letter-spacing: initial;
+}
+
+.nav-list ul li:hover a {
+  color: var(--primary-color);
+}
+/* End Header section */
+
+/* Home */
+#home {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  animation: slide 20s infinite;
+}
+
+.home {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0 50px;
+  justify-content: flex-start;
+}
+
+.home h1 {
+  display: block;
+  width: fit-content;
+  font-size: 4rem;
+  position: relative;
+  color: transparent;
+  animation: text_reveal 0.5s ease forwards;
+  animation-delay: 1s;
+}
+
+.home h1:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.home h1:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.home h1:nth-child(3) {
+  animation: text_reveal_name 0.5s ease forwards;
+  animation-delay: 3s;
+}
+
+.home h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  animation: text_reveal_box 1s ease;
+  animation-delay: 0.5s;
+}
+
+.home h1:nth-child(1) span {
+  animation-delay: 0.5s;
+}
+
+.home h1:nth-child(2) span {
+  animation-delay: 1.5s;
+}
+
+.home h1:nth-child(3) span {
+  animation-delay: 2.5s;
+}
+/* End Home */
+
+/* skills Section */
+.skills {
+  flex-direction: column;
+  text-align: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.skill-top {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skill-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* overflow-x: scroll; */
+  margin-top: 5rem;
+}
+
+.skill-item {
+  flex-basis: 80%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("http://www.bestbackgroundwallpaper.com/wp-content/uploads/2020/09/bread-and-wheat-food-ultra-hd-wallpaper-for-4k-uhd-widescreen-desktop-tablet-smartphone-5f6e4665982d0.jpg")
+      no-repeat;
+  background-size: cover;
+  margin: 10px 5%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.skill-img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.skill-item h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.skill-item p {
+  color: white;
+  text-align: left;
+}
+/* End skills Section */
+
+/* Projects section */
+.projects {
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+}
+
+.projects-header h1 {
+  margin-bottom: 50px;
+}
+
+.projects-list {
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.project-info {
+  padding: 30px;
+  flex-basis: 50%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.project-info h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.project-info p {
+  color: white;
+  margin: 1rem 0 2rem;
+}
+
+.project-img {
+  flex-basis: 50%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-img img {
+  transition: 0.3s ease transform;
+}
+
+.project-item:hover .project-img img {
+  transform: scale(1.2);
+}
+/* End Projects section */
+
+/* About Section */
+.about {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px 100px;
+}
+
+.about-detail {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-left {
+  width: 250px;
+  height: 360px;
+}
+
+.about-left .about-img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border: 10px solid white;
+}
+.about-left .about-img::after {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: 19px;
+  height: 98%;
+  width: 98%;
+  border: 7px solid var(--primary-color);
+  z-index: -1;
+}
+
+.about-right {
+  width: 100%;
+  margin-top: 4rem;
+}
+.about-right h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  margin-bottom: 10px;
+}
+.about-right p {
+  margin-bottom: 20px;
+}
+
+.about-right .btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+/* End About Section */
+
+/* contact Section */
+#contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url("../img/banner2.jpg") no-repeat;
+  background-size: cover;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px 2rem;
+}
+
+.contact div .section-title {
+  color: var(--white-color);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto 0;
+}
+
+.contact__form .form-group {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.contact__form .form-group__label {
+  position: absolute;
+  color: #dad5d5;
+  font-size: 1.6rem;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: all 0.2s ease;
+  padding-left: 2rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact__form .form-group__input {
+  outline: none;
+  width: 100%;
+  background-color: #3a3939;
+  border: 1px solid #585757;
+  padding: 0.5rem 0 0.5rem 2rem;
+  line-height: 4rem;
+  font-size: 1.6rem;
+  color: #dad5d5;
+}
+
+.contact__form .form-group__input:hover {
+  border: 1px solid #817e7e;
+}
+
+.contact__form .form-group__input:focus + .form-group__label,
+.contact__form .form-group__input:not(:placeholder-shown) + .form-group__label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  top: 1rem;
+}
+
+.contact__form .form-group__submit.btn {
+  width: 100%;
+  padding: 0.5rem 0 0.5rem 2rem;
+  line-height: 4rem;
+}
+
+.contact__form .form-group__submit.btn:hover {
+  border-color: var(--white-color);
+  color: var(--white-color);
+}
+/*End contact Section */
+
+/* Footer */
+.footer {
+  background-color: var(--black-color);
+  min-height: fit-content;
+  flex-direction: column;
+  padding-top: 4rem;
+  padding-bottom: 10px;
+}
+
+.footer-detail .brand h1 {
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  margin: 4rem 0;
+}
+
+.social-item {
+  margin: 0 2rem;
+}
+
+.social-item i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  transition: all 0.2s;
+}
+
+.social-item i:hover {
+  color: var(--white-color);
+}
+
+.footer p {
+  color: white;
+  font-size: 1.4rem;
+}
+/* End Footer */
